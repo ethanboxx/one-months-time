@@ -1,2 +1,2 @@
-# One months time
+# One month's time
 
