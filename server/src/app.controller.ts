@@ -1,18 +1,29 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { months } from './timeTransformation';
+
 @Controller()
 export class AppController {
-  @Get()
-  getHello(): string {
-    return 'hi';
-  }
+  constructor(@InjectModel('Email') private emailModel: Model<EmailDto>) {}
+
   @Post()
-  postTest(@Body() dto: PostDto): PostDto {
-    return dto;
+  async create(@Body() createEmailDto: EmailDto): Promise<EmailDto> {
+    const createdEmail = new this.emailModel({
+      email: createEmailDto.email,
+      content: createEmailDto.content,
+      sendAfter: Date.now() + months(1),
+    });
+    return createdEmail.save();
+  }
+  @Get()
+  async findAll(): Promise<EmailDto[]> {
+    return this.emailModel.find().exec();
   }
 }
 
-interface PostDto {
+interface EmailDto {
+  email: string;
   content: string;
-  send: Date | undefined;
 }
