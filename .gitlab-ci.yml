@@ -1,0 +1,51 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - lint
+
+build-client:
+  stage: build
+  script:
+    - cd client
+    - npm ci
+    - npm run build
+    - mv public public-source
+    - mv dist public
+  artifacts:
+    paths:
+      - client/public
+
+build-server:
+  stage: build
+  script:
+    - cd server
+    - npm ci
+    - npm run build
+    - mv dist public
+  artifacts:
+    paths:
+      - server/public
+
+test-server:
+  stage: test
+  script:
+    - cd server
+    - npm i
+    - npm run test
+
+lint-client:
+  stage: lint
+  script:
+    - cd client
+    - npm i
+    - npm run lint --no-fix
+
+lint-server:
+  stage: lint
+  script:
+    - cd server
+    - npm i
+    - npm run lint:check
+    - npm run format:check
