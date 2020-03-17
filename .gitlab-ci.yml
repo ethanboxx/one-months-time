@@ -1,4 +1,4 @@
-image: node:latest
+image: yarnpkg/node-yarn
 
 stages:
   - build
@@ -9,8 +9,8 @@ build-client:
   stage: build
   script:
     - cd client
-    - npm ci
-    - npm run build
+    - yarn install
+    - yarn build
     - mv public public-source
     - mv dist public
   artifacts:
@@ -21,8 +21,8 @@ build-server:
   stage: build
   script:
     - cd server
-    - npm ci
-    - npm run build
+    - yarn install
+    - yarn build
     - mv dist public
   artifacts:
     paths:
@@ -32,20 +32,20 @@ test-server:
   stage: test
   script:
     - cd server
-    - npm i
-    - npm run test
+    - yarn install
+    - yarn test
 
 lint-client:
   stage: lint
   script:
     - cd client
-    - npm i
-    - npm run lint --no-fix
+    - yarn install
+    - yarn lint --no-fix
 
 lint-server:
   stage: lint
   script:
     - cd server
-    - npm i
-    - npm run lint:check
-    - npm run format:check
+    - yarn install
+    - yarn lint:check
+    - yarn format:check
