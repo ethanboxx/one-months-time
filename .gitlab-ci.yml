@@ -8,6 +8,7 @@ stages:
 build-client:
   stage: build
   script:
+    - node --version
     - cd client
     - yarn install
     - yarn build
