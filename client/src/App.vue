@@ -10,7 +10,8 @@
 
       <label for="pswd">This data is sensitive.</label>
       <input type="checkbox" id="pswd" name="pswd" />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Send in one month" />
+      <input type="submit" value="Send in one week" />
     </form>
   </div>
 </template>
