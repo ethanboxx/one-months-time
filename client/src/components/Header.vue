@@ -15,8 +15,7 @@ export default Vue.extend({
 <style scoped lang="sass">
 header
   h1
-    margin: 0
-    margin-bottom: -10px
+    margin: -10px 0
     font-size: 3.5em
     padding: 0
     font-family: 'Baloo Da 2', cursive

@@ -29,6 +29,7 @@ body
   display: flex
   justify-content: center
   align-items: center
+  font-family: 'Roboto', sans-serif
   *,
   *::after,
   *::before

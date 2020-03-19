@@ -1,13 +1,11 @@
 <template>
   <form>
-    <label for="email">First Name</label>
-    <input
-      type="email"
-      id="email"
+    <OneLineInput
+      lable="Email"
       name="email"
-      placeholder="Your Email.."
-      required
-    />
+      placeholder="Type your email.."
+      type="email"
+    ></OneLineInput>
     <label for="content">Subject</label>
     <textarea
       id="content"
@@ -25,12 +23,15 @@
 
 <script lang="ts">
 import Vue from "vue";
+import OneLineInput from "./form/OneLineInput.vue";
+
 export default Vue.extend({
-  name: "Form"
+  name: "Form",
+  components: { OneLineInput }
 });
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 input, textarea
   width: 100%
   border-radius: 5px
@@ -42,6 +43,10 @@ textarea
   height: 200px
 
 textarea, input, button, select
+  margin: 10px 0
   font-family: inherit
   font-size: inherit
+
+label
+  font-size: 1.3em
 </style>
