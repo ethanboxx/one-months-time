@@ -6,9 +6,20 @@
     </header>
     <form>
       <label for="email">First Name</label>
-      <input type="email" id="email" name="email" placeholder="Your Email.." required />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your Email.."
+        required
+      />
       <label for="content">Subject</label>
-      <textarea id="content" name="content" placeholder="Write something.." required></textarea>
+      <textarea
+        id="content"
+        name="content"
+        placeholder="Write something.."
+        required
+      ></textarea>
 
       <label for="pswd">This data is sensitive.</label>
       <input type="checkbox" id="pswd" name="pswd" />
@@ -77,7 +88,6 @@ header
     font-size: 3.5em
     padding: 0
     font-family: 'Baloo Da 2', cursive
-
   h2
     margin-top: 0
 
