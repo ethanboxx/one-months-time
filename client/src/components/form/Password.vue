@@ -1,15 +1,22 @@
 <template>
   <div>
     <label for="pswd">
-      <input v-model="showPasswordBox" class="checkbox" type="checkbox" id="pswd" name="pswd"  checked="checked"/>
+      <input
+        v-model="showPasswordBox"
+        class="checkbox"
+        type="checkbox"
+        id="pswd"
+        name="pswd"
+        checked="checked"
+      />
       <OneLineInput
         v-if="showPasswordBox"
         lable="Password"
         name="password"
         placeholder="Type a password.."
         type="password"
-      ></OneLineInput><template v-else> This data is sensitive.</template
-      >
+      ></OneLineInput
+      ><template v-else> This data is sensitive.</template>
       <span class="checkmark"></span>
     </label>
   </div>
