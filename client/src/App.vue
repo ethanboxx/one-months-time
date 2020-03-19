@@ -1,40 +1,18 @@
 <template>
   <div id="app">
-    <header>
-      <h1>One Month's Time</h1>
-      <h2>Hold your future self accountable.</h2>
-    </header>
-    <form>
-      <label for="email">First Name</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Your Email.."
-        required
-      />
-      <label for="content">Subject</label>
-      <textarea
-        id="content"
-        name="content"
-        placeholder="Write something.."
-        required
-      ></textarea>
-
-      <label for="pswd">This data is sensitive.</label>
-      <input type="checkbox" id="pswd" name="pswd" />
-      <input type="submit" value="Send in one month" />
-      <input type="submit" value="Send in one week" />
-    </form>
+    <Header></Header>
+    <Form></Form>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import Form from "./components/Form.vue";
+import Header from "./components/Header.vue";
 
 export default Vue.extend({
   name: "App",
-  components: {}
+  components: { Form, Header }
 });
 </script>
 
@@ -43,7 +21,7 @@ body
   background: rgb(9,121,68)
   background-position: center
   background-size: cover
-  background-image: url("square.png")
+  background-image: url("https://unsplash.com/photos/_3l5B_4E_u0/download?force=true&w=1920")
   min-height: 100vh
   margin: 0
   padding: 0
@@ -55,19 +33,6 @@ body
   *::after,
   *::before
     box-sizing: inherit
-input, textarea
-  width: 100%
-  border-radius: 5px
-  border: none
-  padding: 10px
-
-textarea
-  resize: vertical
-  height: 200px
-
-textarea, input, button, select
-  font-family: inherit
-  font-size: inherit
 
 #app
   max-width: 1000px
@@ -81,15 +46,6 @@ textarea, input, button, select
   animation-duration: 1s
   animation-timing-function: ease-out
 
-header
-  h1
-    margin: 0
-    margin-bottom: -10px
-    font-size: 3.5em
-    padding: 0
-    font-family: 'Baloo Da 2', cursive
-  h2
-    margin-top: 0
 
 @keyframes glass
   0%
