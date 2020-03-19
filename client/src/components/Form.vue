@@ -45,8 +45,8 @@ textarea
 textarea, input, button, select
   margin: 10px 0
   font-family: inherit
-  font-size: inherit
+  font-size: 16px
 
 label
-  font-size: 1.3em
+  font-size: 20px
 </style>

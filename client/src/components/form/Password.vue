@@ -38,15 +38,15 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
+div > label
+  display: flex
+  align-items: center
 
 label
   display: block
   position: relative
   padding-left: 35px
-  margin-bottom: 12px
-  cursor: pointer
   font-size: 22px
-  user-select: none
 
 
 /* Hide the browser's default checkbox */
@@ -61,7 +61,7 @@ label input
 /* Create a custom checkbox */
 .checkmark
   position: absolute
-  top: 0
+  top: calc( 50% - 12.5px )
   left: 0
   height: 25px
   width: 25px
