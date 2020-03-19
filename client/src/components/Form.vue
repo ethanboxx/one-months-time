@@ -14,8 +14,7 @@
       required
     ></textarea>
 
-    <label for="pswd">This data is sensitive.</label>
-    <input type="checkbox" id="pswd" name="pswd" />
+    <Password></Password>
     <input type="submit" value="Send in one month" />
     <input type="submit" value="Send in one week" />
   </form>
@@ -24,10 +23,11 @@
 <script lang="ts">
 import Vue from "vue";
 import OneLineInput from "./form/OneLineInput.vue";
+import Password from "./form/Password.vue";
 
 export default Vue.extend({
   name: "Form",
-  components: { OneLineInput }
+  components: { OneLineInput, Password }
 });
 </script>
 
