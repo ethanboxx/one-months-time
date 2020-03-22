@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { months } from './timeTransformation';
+import { months, weeks } from './timeTransformation';
 
 @Controller()
 export class AppController {
@@ -10,10 +10,16 @@ export class AppController {
 
   @Post()
   async create(@Body() createEmailDto: EmailDto): Promise<EmailDto> {
-    const createdEmail = new this.emailModel({
+    const createEmail: Email = {
       email: createEmailDto.email,
       content: createEmailDto.content,
-      sendAfter: Date.now() + months(1),
+      sendIn: createEmailDto.month != undefined ? months(1) : weeks(1),
+    };
+    console.log(createEmailDto);
+    const createdEmail = new this.emailModel({
+      email: createEmail.email,
+      content: createEmail.content,
+      sendAfter: Date.now() + createEmail.sendIn,
     });
     return createdEmail.save();
   }
@@ -26,4 +32,12 @@ export class AppController {
 interface EmailDto {
   email: string;
   content: string;
+  month: string | undefined;
+  week: string | undefined;
+}
+
+interface Email {
+  email: string;
+  content: string;
+  sendIn: number;
 }

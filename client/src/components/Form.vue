@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form action="http://localhost:3000/" method="post">
     <OneLineInput
       lable="Email"
       name="email"
@@ -15,8 +15,8 @@
     ></textarea>
 
     <Password></Password>
-    <input type="submit" value="Send in one month" />
-    <input type="submit" value="Send in one week" />
+    <input type="submit" name="week" value="Send in one month" />
+    <input type="submit" name="month" value="Send in one week" />
   </form>
 </template>
 

@@ -14,6 +14,10 @@ function days(d: number): number {
   return hours(d) * 24;
 }
 
+export function weeks(w: number): number {
+  return days(w) * 7;
+}
+
 export function months(m: number): number {
   return days(m) * 30.42;
 }
