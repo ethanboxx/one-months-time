@@ -22,8 +22,12 @@ export class EmailService {
     });
     return createdEmail.save();
   }
-  async findAll(): Promise<EmailDto[]> {
+  async findAll(): Promise<EmailDB_DTO[]> {
     return this.emailModel.find().exec();
+  }
+
+  async remove(id: string): Promise<EmailDB_DTO[]> {
+    throw 'unimplemented';
   }
 }
 
@@ -38,4 +42,10 @@ interface Email {
   email: string;
   content: string;
   sendIn: number;
+}
+export interface EmailDB_DTO {
+  email: string;
+  content: string;
+  sendAfter: number;
+  _id: string;
 }

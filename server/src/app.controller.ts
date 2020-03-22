@@ -3,7 +3,7 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { months, weeks } from './database/timeTransformation';
-import { EmailService } from './database/email.service';
+import { EmailService, EmailDB_DTO } from './database/email.service';
 
 @Controller()
 export class AppController {
@@ -17,7 +17,7 @@ export class AppController {
     return this.emailService.create(createEmailDto);
   }
   @Get()
-  async findAll(): Promise<EmailDto[]> {
+  async findAll(): Promise<EmailDB_DTO[]> {
     return this.emailService.findAll();
   }
 }
