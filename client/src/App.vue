@@ -41,8 +41,8 @@ body
   backdrop-filter: blur(10px) brightness(0.8)
   border-radius: 7px
   background-color: rgba(255, 255,255 ,0.3 )
-  box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75)
-  border: 3px inset rgba(255,255,255, .2)
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3), 0px 0px 9px -1px rgba(0,0,0,0.75)
+  // border: 3px inset rgba(255,255,255, .2)
   animation: glass
   animation-duration: 1s
   animation-timing-function: ease-out
