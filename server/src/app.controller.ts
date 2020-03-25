@@ -9,11 +9,11 @@ import { EmailService, EmailDB_DTO } from './database/email.service';
 export class AppController {
   constructor(
     private emailService: EmailService,
-    @InjectModel('Email') private emailModel: Model<EmailDto>,
+    @InjectModel('Email') private emailModel: Model<EmailDB_DTO>,
   ) {}
 
   @Post()
-  async create(@Body() createEmailDto: EmailDto): Promise<EmailDto> {
+  async create(@Body() createEmailDto: EmailDto): Promise<EmailDB_DTO> {
     return this.emailService.create(createEmailDto);
   }
   @Get()

@@ -12,7 +12,6 @@ export const databaseUrl = `mongodb+srv://${process.env.DATABASEUSR}:${process.e
 @Module({
   imports: [
     MongooseModule.forRoot(databaseUrl, {
-      auth: { authdb: 'admin' },
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
