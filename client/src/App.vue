@@ -51,10 +51,10 @@ body
 @keyframes glass
   0%
     backdrop-filter: blur(0.1px) brightness(0.9)
-    box-shadow: 0px 0px 0px -1px rgba(0,0,0,1)
+    box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3), 0px 0px 0px -1px rgba(0,0,0,1)
     transform: scale(0.98)
-    filter: blur(1px)
+    filter: blur(0.8px)
   100%
     backdrop-filter: blur(10px) brightness(0.8)
-    box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75)
+    box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3), 0px 0px 9px -1px rgba(0,0,0,0.75)
 </style>
