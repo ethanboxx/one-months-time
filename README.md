@@ -1,8 +1,2 @@
-# post
+# One month's time
 
-```ts
-{
-  content: String | Cypher,
-  send: Date,
-}
-```
