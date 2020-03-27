@@ -27,8 +27,9 @@ export const emailUrl = `smtps://${process.env.EMAILUSR}@gmail.com:${process.env
           from: '"One Months Time" <onemonthstime@gmail.com>',
         },
       }),
-    }),ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', 'client' ,'dist'),
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client', 'dist'),
     }),
   ],
   controllers: [AppController],

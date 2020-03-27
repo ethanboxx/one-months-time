@@ -21,7 +21,6 @@ build-client:
 build-server:
   stage: build
   script:
-    - cd server
     - yarn install
     - yarn build
     - mv dist public
@@ -32,7 +31,6 @@ build-server:
 test-server:
   stage: test
   script:
-    - cd server
     - yarn install
     - yarn test
 
@@ -46,7 +44,6 @@ lint-client:
 lint-server:
   stage: lint
   script:
-    - cd server
     - yarn install
     - yarn lint:check
     - yarn format:check
