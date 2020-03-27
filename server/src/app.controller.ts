@@ -12,11 +12,11 @@ export class AppController {
     @InjectModel('Email') private emailModel: Model<EmailDB_DTO>,
   ) {}
 
-  @Post()
+  @Post('api')
   async create(@Body() createEmailDto: EmailDto): Promise<EmailDB_DTO> {
     return this.emailService.create(createEmailDto);
   }
-  @Get()
+  @Get('api')
   async findAll(): Promise<EmailDB_DTO[]> {
     return this.emailService.findAll();
   }

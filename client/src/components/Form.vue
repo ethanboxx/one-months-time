@@ -1,5 +1,5 @@
 <template>
-  <form action="http://localhost:3000/" method="post">
+  <form action="http://localhost:3000/api/" method="post">
     <OneLineInput
       lable="Email"
       name="email"

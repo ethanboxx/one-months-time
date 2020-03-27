@@ -7,6 +7,8 @@ import { TasksService } from './emailSend.schedule.service';
 import { EmailService } from './database/email.service';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { SendEmailService } from './email/send.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 require('dotenv').config();
 export const databaseUrl = `mongodb+srv://${process.env.DATABASEUSR}:${process.env.DATABASEPWD}@main-hfm9w.mongodb.net/test?retryWrites=true&w=majority`;
 export const emailUrl = `smtps://${process.env.EMAILUSR}@gmail.com:${process.env.DATABASEPWD}@smtp.gmail.com`;
@@ -25,6 +27,8 @@ export const emailUrl = `smtps://${process.env.EMAILUSR}@gmail.com:${process.env
           from: '"One Months Time" <onemonthstime@gmail.com>',
         },
       }),
+    }),ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '..', 'client' ,'dist'),
     }),
   ],
   controllers: [AppController],
