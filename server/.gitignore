@@ -36,4 +36,4 @@ lerna-debug.log*
 
 # Passwords and stuff
 
-.env
+src/env.ts

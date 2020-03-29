@@ -9,9 +9,9 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { SendEmailService } from './email/send.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-require('dotenv').config();
-export const databaseUrl = `mongodb+srv://${process.env.DATABASEUSR}:${process.env.DATABASEPWD}@main-hfm9w.mongodb.net/test?retryWrites=true&w=majority`;
-export const emailUrl = `smtps://${process.env.EMAILUSR}@gmail.com:${process.env.DATABASEPWD}@smtp.gmail.com`;
+import { DATABASEUSR, EMAILUSR, DATABASEPWD } from './env';
+export const databaseUrl = `mongodb+srv://${DATABASEUSR}:${DATABASEPWD}@main-hfm9w.mongodb.net/test?retryWrites=true&w=majority`;
+export const emailUrl = `smtps://${EMAILUSR}@gmail.com:${DATABASEPWD}@smtp.gmail.com`;
 @Module({
   imports: [
     MongooseModule.forRoot(databaseUrl, {
