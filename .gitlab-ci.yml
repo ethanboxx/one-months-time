@@ -1,6 +1,6 @@
 image: node
 
-before-script:
+before_script:
   - echo $ENVTS > server/src/env.ts
 
 stages:
