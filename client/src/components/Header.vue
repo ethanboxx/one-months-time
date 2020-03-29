@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>One Month's Time</h1>
-    <h2>Hold your future self accountable.</h2>
+    <h2>Hold your future self accountable!</h2>
   </header>
 </template>
 
