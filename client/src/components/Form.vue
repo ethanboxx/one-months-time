@@ -1,18 +1,8 @@
 <template>
-  <form action="http://localhost:3000/api/" method="post">
-    <OneLineInput
-      lable="Email"
-      name="email"
-      placeholder="Type your email.."
-      type="email"
-    ></OneLineInput>
+  <form action="/api" method="post">
+    <OneLineInput lable="Email" name="email" placeholder="Type your email.." type="email"></OneLineInput>
     <label for="content">Subject</label>
-    <textarea
-      id="content"
-      name="content"
-      placeholder="Write something.."
-      required
-    ></textarea>
+    <textarea id="content" name="content" placeholder="Write something.." required></textarea>
 
     <Password></Password>
     <input type="submit" name="week" value="Send in one month" />
