@@ -1,5 +1,8 @@
 image: node
 
+before-script:
+  - echo $ENVTS > server/src/env.ts
+
 stages:
   - build
   - test
