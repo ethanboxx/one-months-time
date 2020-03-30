@@ -2,22 +2,21 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { months, weeks } from './database/timeTransformation';
-import { EmailService, EmailDB_DTO } from './database/email.service';
+import { EmailService, EmailDBDTO } from './database/email.service';
 
 @Controller()
 export class AppController {
   constructor(
     private emailService: EmailService,
-    @InjectModel('Email') private emailModel: Model<EmailDB_DTO>,
+    @InjectModel('Email') private emailModel: Model<EmailDBDTO>,
   ) {}
 
   @Post('api')
-  async create(@Body() createEmailDto: EmailDto): Promise<EmailDB_DTO> {
+  async create(@Body() createEmailDto: EmailDto): Promise<EmailDBDTO> {
     return this.emailService.create(createEmailDto);
   }
   @Get('api')
-  async findAll(): Promise<EmailDB_DTO[]> {
+  async findAll(): Promise<EmailDBDTO[]> {
     return this.emailService.findAll();
   }
 }

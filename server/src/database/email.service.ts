@@ -1,14 +1,14 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { Document } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Types, mongo } from 'mongoose';
+import { Model, mongo } from 'mongoose';
 import { months, weeks } from './timeTransformation';
 
 @Controller()
 export class EmailService {
-  constructor(@InjectModel('Email') private emailModel: Model<EmailDB_DTO>) {}
+  constructor(@InjectModel('Email') private emailModel: Model<EmailDBDTO>) {}
 
-  async create(createEmailDto: EmailDto): Promise<EmailDB_DTO> {
+  async create(createEmailDto: EmailDto): Promise<EmailDBDTO> {
     const createEmail: Email = {
       email: createEmailDto.email,
       content: createEmailDto.content,
@@ -22,7 +22,7 @@ export class EmailService {
     });
     return createdEmail.save();
   }
-  async findAll(): Promise<EmailDB_DTO[]> {
+  async findAll(): Promise<EmailDBDTO[]> {
     return this.emailModel.find().exec();
   }
 
@@ -46,7 +46,7 @@ interface Email {
   content: string;
   sendIn: number;
 }
-export interface EmailDB_DTO extends Document {
+export interface EmailDBDTO extends Document {
   email: string;
   content: string;
   sendAfter: number;
