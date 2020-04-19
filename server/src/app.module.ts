@@ -9,8 +9,8 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { SendEmailService } from './email/send.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { DATABASEUSR, EMAILUSR, DATABASEPWD } from './env';
-export const databaseUrl = `mongodb+srv://${DATABASEUSR}:${DATABASEPWD}@main-hfm9w.mongodb.net/test?retryWrites=true&w=majority`;
+import { DATABASEUSR, EMAILUSR, DATABASEPWD, PRODUCTION } from './env';
+export const databaseUrl = `mongodb+srv://${DATABASEUSR}:${DATABASEPWD}@main-hfm9w.mongodb.net/${PRODUCTION ? "prod" : "testing" }?retryWrites=true&w=majority`;
 export const emailUrl = `smtps://${EMAILUSR}@gmail.com:${DATABASEPWD}@smtp.gmail.com`;
 @Module({
   imports: [
