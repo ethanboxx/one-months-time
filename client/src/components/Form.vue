@@ -14,7 +14,7 @@
       required
     ></textarea>
 
-    <Password></Password>
+    <!-- <Password></Password> -->
     <input type="submit" name="week" value="Send in one month" />
     <input type="submit" name="month" value="Send in one week" />
   </form>
@@ -23,11 +23,10 @@
 <script lang="ts">
 import Vue from "vue";
 import OneLineInput from "./form/OneLineInput.vue";
-import Password from "./form/Password.vue";
 
 export default Vue.extend({
   name: "Form",
-  components: { OneLineInput, Password }
+  components: { OneLineInput }
 });
 </script>
 
@@ -41,6 +40,9 @@ input, textarea
 textarea
   resize: vertical
   height: 200px
+
+textarea, input:not([type="submit"])
+  box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.6)
 
 textarea, input, button, select
   margin: 10px 0
