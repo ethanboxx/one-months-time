@@ -10,7 +10,10 @@ export class SendEmailService {
       to: _to, // list of receivers
       from: 'onemonthstime@gmail.com', // sender address
       subject: 'An Email from your future self.', // Subject line
-      html: `<b>${content}</b>`, // HTML body content
+      html:
+`
+<b>${content}</b>
+`,
     });
   }
 }
