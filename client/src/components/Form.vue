@@ -41,7 +41,7 @@ input, textarea
 input[type="submit"]
   backdrop-filter: blur(10px) brightness(0.8)
   background-color: rgba(255, 255,255 ,0.3 )
-  box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3)
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3), 0px 0px 6px 0px rgba(255,255,255,0.3)
   width: 150px
   transition: .2s
   &:first-child
