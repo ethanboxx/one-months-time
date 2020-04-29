@@ -1,7 +1,7 @@
 image: node
 
 before_script:
-  - echo "$ENVTS"
+  - echo "$TESTVAR"
   - echo "$ENVTS" > server/src/env.ts
   - cat server/src/env.ts
 
