@@ -9,3 +9,9 @@
 ## Help
 
 If you run into any issues with this web app please email [incoming+efunb-one-months-time-17520786-issue-@incoming.gitlab.com](mailto:incoming+efunb-one-months-time-17520786-issue-@incoming.gitlab.com)
+
+![](screenshot.png)
+
+## **Warning**
+
+**If you are viewing this from GitHub then this is a read only copy. Please contribute to the GitLab copy [here](https://gitlab.com/efunb/one-months-time).**
