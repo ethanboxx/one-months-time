@@ -19,8 +19,8 @@ export default Vue.extend({
     name: String,
     lable: String,
     placeholder: String,
-    type: { type: String, default: "text" }
-  }
+    type: { type: String, default: "text" },
+  },
 });
 </script>
 

@@ -16,8 +16,9 @@
 
     <!-- <Password></Password> -->
     <div id="submits">
-    <input type="submit" name="week" value="Send in one month" />
-    <input type="submit" name="month" value="Send in one week" /></div>
+      <input type="submit" name="week" value="Send in one month" />
+      <input type="submit" name="month" value="Send in one week" />
+    </div>
   </form>
 </template>
 
@@ -27,7 +28,7 @@ import OneLineInput from "./form/OneLineInput.vue";
 
 export default Vue.extend({
   name: "Form",
-  components: { OneLineInput }
+  components: { OneLineInput },
 });
 </script>
 
@@ -70,5 +71,4 @@ label
 #submits
   display: flex
   justify-content: center
-
 </style>

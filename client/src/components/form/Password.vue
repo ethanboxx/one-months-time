@@ -29,11 +29,11 @@ import OneLineInput from "./OneLineInput.vue";
 export default Vue.extend({
   name: "Password",
   components: { OneLineInput },
-  data: function() {
+  data: function () {
     return {
-      showPasswordBox: false
+      showPasswordBox: false,
     };
-  }
+  },
 });
 </script>
 
