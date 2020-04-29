@@ -1,9 +1,7 @@
 image: node
 
 before_script:
-  - echo "$TESTVAR"
-  - echo "$ENVTS" > server/src/env.ts
-  - cat server/src/env.ts
+  - mv /builds/efunb/one-months-time.tmp/ENVTS server/src/env.ts
 
 stages:
   - build
