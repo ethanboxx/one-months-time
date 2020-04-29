@@ -2,6 +2,7 @@ image: node
 
 before_script:
   - echo $ENVTS > server/src/env.ts
+  - cat server/src/env.ts
 
 stages:
   - build
